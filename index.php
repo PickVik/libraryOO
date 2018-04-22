@@ -11,7 +11,7 @@ echo $user1->get_Type();
 
 echo PHP_EOL;
 
-$user2 = new Member('Joe', 'joe@v.com', '05-05-2010');
+$user2 = new Member('Joe', 'joe@v.com', '05-05-2012');
 
 echo $user2->get_Type();
 
