@@ -1,5 +1,7 @@
 <?php
 include ('user.php');
+include ('books.php');
+include ('author.php');
 
 $user1 = new Admin('12', 'vik@v.com', 'Vik', 'Mezei', '1234', 4, 3);
 echo $user1->get_Type();
