@@ -44,11 +44,20 @@ class Library{
        
       
       
-        echo "Succesful login";
+         echo "Succesful login";
        
     }
         
-        
+    function search ($search_term)    {
+       echo "searching" ;
+       $sql = "SELECT * FROM books";
+       $results = $this->pdo->query($sql);
+       print_r($results);
+       foreach($results as $row) {
+           print_r($row);
+          
+       }
+    }
         
       
     }
