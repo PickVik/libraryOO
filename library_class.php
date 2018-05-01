@@ -53,12 +53,12 @@ class Library{
        echo "searching" ;
        $sql = "SELECT * FROM `BOOKS` WHERE title like \"%$search_term%\" ";
        $results = $this->pdo->query($sql);
-       print_r($results);
+//       print_r($results);
        foreach($results as $row) {
-           print_r($row);
+          // print_r($row);
            $book=new books ($row["ID"],$row["Title"], $row["ISBN"],$row["YearPublished"]);
            array_push ($this->books, $book);
-           echo count($this-> books);
+           
            
         }
     }

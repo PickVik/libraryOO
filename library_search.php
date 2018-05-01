@@ -1,6 +1,6 @@
 <?php
 
-    print_r($_POST);
+    //print_r($_POST);
 
     include 'library_class.php';
 
@@ -19,7 +19,7 @@
     </head>
     <body>
         
-        <h1>Search for a book</h1>
+        <h1>Search for a book - Type in the title or part of a title that you want to search for. Leave search field empty if you want to search for all books in library catalogue </h1>
         
         <form action="" method="post" > 
 
@@ -31,18 +31,19 @@
         <?php if(!empty($_POST)) { ?>
 
             <div>
-                <h3> Results for your search of <?php echo $_POST["search_term"]; ?></h3>
-                <h2> Number of results <?php echo count($library-> books);?></h2>
-                <?php var_dump($library->books);?>
-                <h2> Your search results are <?php echo $library-> books["0"] -> title;?></h2>
-            </div>   
-        
-        
-        
-        <?php } ?>
-         
-        
-        
+                <h2> You have searched for <?php echo $_POST["search_term"]; ?></h2>
+                <h3> Number of results for your search : <?php echo count($library-> books);?></h3>
+                <h3> Books that match your search results are :
+                <?php 
+                    foreach ($library->books as $book) {
+                        echo "ID= " . $book -> id;
+                        echo "Title= ". $book -> title;
+                        echo "ISBN= " . $book -> ISBN;
+                        echo "Year Published= ". $book -> year_published;                   
+                    }                
+                ?>
+                </h3>               
+            </div>           
+        <?php } ?>    
     </body>    
-    
 </html>
