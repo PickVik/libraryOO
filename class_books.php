@@ -8,6 +8,13 @@ class books{
     public $year_published;
     public $current_user;
     
+    public function __construct($id, $title, $ISBN, $year_published) {
+        $this->id = $id;
+        $this->title = $title;
+        $this->ISBN = $ISBN;
+        $this->year_published = $year_published;
+    }
+     
     
    public function __construct1() {
         /*$this->id = $id;

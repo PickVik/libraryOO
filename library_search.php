@@ -1,7 +1,15 @@
 <?php
 
-print_r($_POST)
+    print_r($_POST);
 
+    include 'library_class.php';
+
+    if (!empty($_POST)) {
+
+        $library = new Library();
+        $library->search ($_POST['search_term']);
+         
+    }
 ?>
 
 <html>
@@ -23,11 +31,16 @@ print_r($_POST)
         <?php if(!empty($_POST)) { ?>
 
             <div>
-                <h3> Results for <?php echo $_POST["search_term"]; ?></h3>
-            </div>    
+                <h3> Results for your search of <?php echo $_POST["search_term"]; ?></h3>
+                <h2> Number of results <?php echo count($library-> books);?></h2>
+                <?php var_dump($library->books);?>
+                <h2> Your search results are <?php echo $library-> books["0"] -> title;?></h2>
+            </div>   
+        
+        
+        
         <?php } ?>
-        
-        
+         
         
         
     </body>    
