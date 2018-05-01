@@ -21,7 +21,8 @@ class Library{
         $this->pdo = new PDO( $dsn, $username, $password);
         echo "Connected to database and ";        
     } catch (PDOException $e){
-         die();
+        echo "connection to database failed";
+        die();
     }       
         
 
